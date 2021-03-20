@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="products.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+
+<div class="bg-img">
+	<div class="note">
+   			<div class="dar"><h2>Products</h2></div>
+        <br>
+        <div class="eve"><h1>Bar & Resturant</h1></div>
+        <br>
+        <div for="email" class="sta"><b class="sta">Everything Gets Better with us</b></div>
+      </div>
+
+ <nav style="top: 0px;height: 63px;">
+        <div class="logo">
+            <a href="index.html"><img src="image/logo.png" alt="Logo Image"></a>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+         <ul class="nav-links">
+           <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            
+            <li><a class="join-button" href="contact.html">Order Now</a></li>
+        </ul>
+        </ul>
+    </nav>
+</div>
+
+
+<div class="prod">
+  <div class="prod2">
+    <img src="image/rest.jpg" class="Snow">
+  </div>
+  <div class="prod2">
+    <img src="image/glass2.jpg" class="Forest">
+  </div>
+</div>
+
+<div class="full2">
+	<img src="image/full2.jpg" class="Snow">
+</div>
+
+
+<div class="product">
+  <div class="product2">
+    <img src="image/rest.jpg" class="Snow">
+  </div>
+  <div class="product2">
+    <img src="image/glass2.jpg" class="Forest">
+  </div>
+</div>
+
+<section>
+<div class="footer">
+  <div class="contain">
+  <div class="col">
+   <h1>Links</h1>
+    <ul>
+      <a href="index.html" style="text-decoration: none;"><li>Home</li></a>
+      <a href="products.html" style="text-decoration: none;"><li>Products</li></a>
+      <a href="about.html" style="text-decoration: none;"><li>About Us</li></a>
+      <a href="gallery.html" style="text-decoration: none;"><li>Gallery</li></a>
+      <a href="contact.html" style="text-decoration: none;"><li>Order Now</li></a>
+    </ul>
+  </div>
+
+  
+  <div class="col2">
+    <h1 style="color: #000000">Support</h1>
+    <ul>
+      <p style="color: #313131">Sardapally (Phansidewa More),</p>
+      <p style="color: #313131"> opp. St. Joseph more,</p>
+      <p style="color: #313131"> P.O Kadamtala, Siliguri,</p>
+      <p style="color: #313131"> P.S. Matigara, Dist: Darjeeling,</p>
+      <p style="color: #313131"> PIN: 734011, W.B</p>
+
+      <p style="color: #313131">Telephone : +91 869 551 0051</p>
+
+        <p style="color: #313131">Telephone : +91 973 334 7999</p>
+
+          <p style="color: #313131">E-mail : bws@bluewebsurfer.com</p>
+    </ul>
+  </div>
+  <div class="col3">
+    <h1>Social</h1>
+    <ul>
+      <i class="fa fa-facebook-square" style="font-size:36px"></i>
+      <i class="fa fa-instagram" style="font-size:36px"></i>
+      <i class="fa fa-whatsapp" style="font-size:36px"></i>
+    </ul>
+  </div>
+
+
+  <div class="copyright-text">
+      <p>Copyright © 2021, All Right Reserved <a href="https://www.bluewebsurfer.com/">BlueWebSurfer</a></p>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<script>const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener('click', ()=>{
+   //Animate Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation
+    hamburger.classList.toggle("toggle");
+});
+</script>
+</body>
+</html>

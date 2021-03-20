@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bar</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="home.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  
+</head>
+<body style="margin-right: 0px;margin-left: 0px;">
+
+<div class="bg-img">
+	<div class="note">
+   			<div class="dar"><h2>Rhythm</h2></div>
+        <br>
+    		<div class="eve"><h1>Bar & Resturant</h1></div>
+        <br>
+    		<div for="email" class="sta"><b class="sta">Everything Gets Better with us</b></div>
+    	</div>
+
+ <nav style="top: 0px;height: 63px;">
+        <div class="logo">
+            <a href="index.html"><img src="image/logo.png" alt="Logo Image"></a>
+        </div>
+        <div class="hamburger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+        <ul class="nav-links">
+           <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            
+            <li><a class="join-button" href="contact.html">Order Now</a></li>
+        </ul>
+    </nav>
+</div>
+<br>
+
+  <div class="bottle">
+    <img src="image/bottle.jpg" class="imgbot">
+  </div>
+
+<div class="text">
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+</div>
+
+<div class="pho">
+
+  <div class="pho2">
+    <img src="image/bottle2.jpg" class="bottle2">
+  </div>
+
+  <div class="pho2">
+    <img src="image/bottle3.jpg" class="bottle3">
+  </div>
+</div>
+
+
+<div class="updown">
+
+  <div class="photo1">
+    <img src="image/bottle3.jpg" class="photo1">
+  </div>
+
+  <div class="photo2">
+    <img src="image/food1.jpg" class="photo2">
+  </div>
+
+  <div class="photo3">
+    <img src="image/bottle4.jpg" class="photo3">
+  </div>
+
+    <div class="photo4">
+      <img src="image/food2.jpg" class="photo4">
+    </div>
+</div>
+
+
+
+
+
+
+
+<section>
+<div class="footer">
+  <div class="contain">
+  <div class="col">
+    <h1>Links</h1>
+    <ul>
+      <a href="index.html" style="text-decoration: none;"><li>Home</li></a>
+      <a href="products.html" style="text-decoration: none;"><li>Products</li></a>
+      <a href="about.html" style="text-decoration: none;"><li>About Us</li></a>
+      <a href="gallery.html" style="text-decoration: none;"><li>Gallery</li></a>
+      <a href="contact.html" style="text-decoration: none;"><li>Order Now</li></a>
+    </ul>
+  </div>
+
+  
+  <div class="col2">
+    <h1 style="color: #000000">Support</h1>
+    <ul>
+      <p style="color: #313131">Sardapally (Phansidewa More),</p>
+      <p style="color: #313131"> opp. St. Joseph more,</p>
+      <p style="color: #313131"> P.O Kadamtala, Siliguri,</p>
+      <p style="color: #313131"> P.S. Matigara, Dist: Darjeeling,</p>
+      <p style="color: #313131"> PIN: 734011, W.B</p>
+
+      <p style="color: #313131">Telephone : +91 869 551 0051</p>
+
+        <p style="color: #313131">Telephone : +91 973 334 7999</p>
+
+          <p style="color: #313131">E-mail : bws@bluewebsurfer.com</p>
+    </ul>
+  </div>
+  <div class="col3">
+    <h1>Social</h1>
+    <ul>
+      <i class="fa fa-facebook-square" style="font-size:36px"></i>
+      <i class="fa fa-instagram" style="font-size:36px"></i>
+      <i class="fa fa-whatsapp" style="font-size:36px"></i>
+    </ul>
+  </div>
+
+  <div class="copyright-text">
+      <p>Copyright © 2021, All Right Reserved <a href="https://www.bluewebsurfer.com/">BlueWebSurfer</a></p>
+</div>
+<div class="clearfix"></div>
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const links = document.querySelectorAll(".nav-links li");
+
+hamburger.addEventListener('click', ()=>{
+   //Animate Links
+    navLinks.classList.toggle("open");
+    links.forEach(link => {
+        link.classList.toggle("fade");
+    });
+
+    //Hamburger Animation
+    hamburger.classList.toggle("toggle");
+});
+</script>
+<!-- /.container -->
+</body>
+</html>
+
+

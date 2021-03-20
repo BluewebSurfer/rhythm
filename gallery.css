@@ -1,0 +1,2851 @@
+body {over2-x: hidden;}
+* {
+  box-sizing: border-box;
+  font-family: 'Courgette', cursive;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("image/bar.jpg");
+  object-fit: cover;
+  min-height: 525px;
+  width: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .bg-img {
+   background-size: fill;
+  }
+}
+
+/*.note{
+    float: left;
+  margin-top: 150px;
+  margin-left: 40%;
+  color: #f6f6f6;
+}*/
+
+.dar{
+  font-size: 4.5em;
+}
+
+.eve{
+  font-size: 1.5em;
+}
+
+.sta{
+  font-size: 1em;
+}
+
+/*@media screen and (max-width: 500px) {
+  .bg-img {
+   margin-left: -200px;
+  }
+}*/
+
+
+/* Position the navbar container inside the image */
+.container {
+  /*position: absolute;*/
+  /*margin: 20px;*/
+  /*width: 100%;*/
+   width: 90%
+
+}
+
+
+div.dar {
+  width: 100%;
+  overflow: hidden;
+}
+div.dar {
+  animation: 3s slide-right;
+}
+
+@keyframes slide-right {
+  from {
+    margin-left: -100%;
+    width: 300%;
+  }
+
+  to{
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+div.eve{
+  width: 100%;
+  
+  overflow: hidden;
+}
+div.eve{
+  animation: 3s slide-left;
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 300%;
+    /*width: 100%;*/
+  }
+
+  to{
+    margin-left: 0%;
+    /*width: 100%;*/
+  }
+}
+
+div.sta{
+  width: 100%;
+ 
+  overflow: hidden;
+}
+div.sta{
+  animation: 3s slide-left;
+}
+
+@keyframes slide-left {
+  from {
+    margin-left: 300%;
+    /*width: 100%;*/
+  }
+
+  to{
+    margin-left: 0%;
+    /*width: 100%;*/
+  }
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    
+    font-family: 'Courgette', cursive;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+nav{
+    height: 6rem;
+    width: 100%;
+    background-color: #1314182e;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.logo img {
+    height: 3rem;
+    width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: #f2f5f7;
+}
+.nav-links li a:hover {
+    color: #82413F;
+    font-weight: bold;
+}
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a:hover::before{
+    width: 100%;
+}
+
+/*Styling Buttons*/
+
+.join-button{
+    color: #F2F2F2;
+    background-color: #82413F;
+    border: 1.5px solid #82413F;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #4c5964;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+.try{
+  float: right;
+}
+
+
+  /* column */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 50px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.col{
+  width: 340px;
+  margin-left: 150px;
+}
+
+.col2{
+  width: 400px;
+  padding-left: 50px;
+  margin-left: 500px;
+}
+
+.col3{
+  width: 150px;
+float: right;
+margin-top: -200px;
+margin-right: 150px;
+}
+
+body {over2-x: hidden;}
+* {
+  box-sizing: border-box;
+  font-family: 'Courgette', cursive;
+}
+
+.bg-img {
+  /* The image used */
+  background-image: url("image/bar.jpg");
+
+  min-height: 525px;
+  width: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+@media screen and (max-width: 800px) {
+  .bg-img {
+   background-size: fill;
+  }
+}
+
+.note{
+    float: left;
+  margin-top: 150px;
+  margin-left: 38%;
+  color: #f6f6f6;
+}
+
+.dar{
+  font-size: 4.5em;
+}
+
+.eve{
+  font-size: 1.5em;
+}
+
+.sta{
+  font-size: 1em;
+}
+
+/*@media screen and (max-width: 500px) {
+  .bg-img {
+   margin-left: -200px;
+  }
+}*/
+
+
+/* Position the navbar container inside the image */
+.container {
+  /*position: absolute;*/
+  /*margin: 20px;*/
+  /*width: 100%;*/
+   width: 90%
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    
+    font-family: 'Courgette', cursive;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+nav{
+    height: 6rem;
+    width: 100%;
+    background-color: #1314182e;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    position: fixed;
+    z-index: 10;
+}
+
+/*Styling logo*/
+.logo{
+    padding:1vh 1vw;
+    text-align: center;
+}
+.logo img {
+    height: 3rem;
+    width: 5rem;
+}
+
+/*Styling Links*/
+.nav-links{
+    display: flex;
+    list-style: none; 
+    width: 88vw;
+    padding: 0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+
+}
+.nav-links li a{
+    text-decoration: none;
+    margin: 0 0.7vw;
+    color: #f2f5f7;
+}
+.nav-links li a:hover {
+    color: #82413F;
+    font-weight: bold;
+}
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a:hover::before{
+    width: 100%;
+}
+
+/*Styling Buttons*/
+
+.join-button{
+    color: #F2F2F2;
+    background-color: #82413F;
+    border: 1.5px solid #82413F;
+    border-radius: 2em;
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.join-button:hover {
+    color: #f2f5f7;
+    background-color: transparent;
+    border:1.5px solid #f2f5f7;
+    transition: all ease-in-out 350ms;
+}
+
+/*Styling Hamburger Icon*/
+.hamburger div{
+    width: 30px;
+    height:3px;
+    background: #f2f5f7;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+.hamburger{
+    display: none;
+}
+
+/*Stying for small screens*/
+@media screen and (max-width: 800px){
+    nav{
+        position: fixed;
+        z-index: 3;
+    }
+    .hamburger{
+        display:block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(-5%, -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-links{
+        position: fixed;
+        background: #4c5964;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        clip-path: circle(50px at 90% -20%);
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-links.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .nav-links li:nth-child(1){
+        transition: all 0.5s ease 0.2s;
+    }
+    .nav-links li:nth-child(2){
+        transition: all 0.5s ease 0.4s;
+    }
+    .nav-links li:nth-child(3){
+        transition: all 0.5s ease 0.6s;
+    }
+    .nav-links li:nth-child(4){
+        transition: all 0.5s ease 0.7s;
+    }
+    .nav-links li:nth-child(5){
+        transition: all 0.5s ease 0.8s;
+    }
+    .nav-links li:nth-child(6){
+        transition: all 0.5s ease 0.9s;
+        margin: 0;
+    }
+    .nav-links li:nth-child(7){
+        transition: all 0.5s ease 1s;
+        margin: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+}
+/*Animating Hamburger Icon on Click*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    transition: all 0.7s ease;
+    width:0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+
+.try{
+  float: right;
+}
+
+.red{
+  width: 600px;
+  height: 300px;
+  margin-left: 110px;
+  object-fit: fill;
+}
+
+.burger{
+  margin-top: 100px;
+  width: 600px;
+  height: 300px;
+  margin-left: -50px;
+  object-fit: fill;
+}
+
+
+.pizza{
+  width: 600px;
+  height: 300px;
+  margin-left: 110px;
+  margin-top: -70px;
+  object-fit: fill;
+}
+
+.orange{
+  margin-top: 30px;
+  width: 600px;
+  height: 300px;
+  margin-left: -50px;
+  object-fit: fill;
+}
+
+
+.orange2{
+  width: 600px;
+  height: 300px;
+  margin-left: 110px;
+  margin-top: -70px;
+  object-fit: fill;
+}
+
+.chow{
+  margin-top: 30px;
+  width: 600px;
+  height: 300px;
+  margin-left: -50px;
+  object-fit: fill;
+}
+
+  /* column */
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 50px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+
+.prod2 {
+  float: left;
+  width: 49.5%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.prod::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.prod{
+  background-color: #e5d190;
+}
+
+.full2{
+  background-color: #e5d190;
+}
+
+.product{
+  background-color: #e5d190;
+}
+
+.product2 {
+  float: left;
+  width: 49.5%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.product::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+
+
+.col{
+  width: 340px;
+  margin-left: 150px;
+}
+
+.col2{
+  width: 400px;
+  padding-left: 50px;
+  margin-left: 500px;
+}
+
+.col3{
+  width: 150px;
+float: right;
+margin-top: -200px;
+margin-right: 150px;
+}
+
+
+.footer {
+  width: 100%;
+  position: absolute;
+  height: auto;
+  /*background-color: #070617;*/
+  /*margin-top: 75px;*/
+  background-image: url("image/blur.jpg");
+}
+.footer .col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+}
+.footer .col h1 {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
+  /*color: rgba(255,255,255,0.2);*/
+  color: #000000;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.250em;
+}
+.footer .col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer .col ul li {
+  color: #313131;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+}
+.social ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+  color: #ffffff;
+  transition: .1s;
+  -webkit-transition: .1s;
+  -moz-transition: .1s;
+}
+.clearfix {
+  clear: both;
+}
+
+
+.copyright-text{
+  text-align: center;
+}
+
+@media screen and (max-width: 950px) {
+.bg-img{
+width:100%
+}
+}
+
+
+@media screen and (max-width: 1000px) {
+  .note {
+  margin-left: 280px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .note {
+  margin-left: 245px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .note {
+  margin-left: 200px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .note {
+  margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .note {
+  margin-left: 130px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .note {
+  margin-left: 100px;
+  font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .note {
+  margin-left: 90px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .note {
+  margin-left: 65px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .dar {
+  font-size: 4em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .eve {
+  font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .sta {
+  font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .bottle {
+  height: 400px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .bottle {
+  height: 370px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .bottle {
+  height: 350px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .bottle {
+  height: 320px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .bottle {
+  height: 280px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bottle {
+  height: 250px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .bottle {
+  height: 220px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bottle {
+  height: 200px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .bottle {
+  height: 180px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .text {
+  padding-left: 100px;
+  padding-right: 100px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bottle2 {
+margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .bottle3 {
+margin-left: 5px;
+  }
+}
+
+/*@media screen and (max-width: 799px) {
+  .bottle2 {
+width: 500px;
+  }
+}*/
+
+@media screen and (max-width: 650px) {
+  .bottle3 {
+width: 280px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bottle3 {
+width: 270px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bottle2 {
+width: 270px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .photo2 {
+margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .photo3 {
+margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .photo4 {
+margin-top: 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .col {
+width: 350px;
+  }
+}
+
+@media screen and (max-width: 950px) {
+.col{
+  margin-left: 100px;
+}
+}
+
+@media screen and (max-width: 950px) {
+.col2{
+  margin-left: 250px;
+}
+}
+
+@media screen and (max-width: 950px) {
+.col3{
+  margin-right: 100px;
+}
+}
+
+@media screen and (max-width: 950px) {
+.bottle3{
+  margin-left: 10px;
+}
+}
+
+@media screen and (max-width: 950px) {
+.photo1{
+  width: 205px;
+}
+}
+
+@media screen and (max-width: 950px) {
+.photo2{
+  width: 205px;
+}
+}
+
+@media screen and (max-width: 950px) {
+.photo3{
+  width: 205px;
+}
+}
+
+@media screen and (max-width: 950px) {
+.photo4{
+  width: 205px;
+}
+}
+
+
+@media screen and (max-width: 900px) {
+.photo1{
+  width: 200px;
+}
+}
+
+@media screen and (max-width: 900px) {
+.photo2{
+  width: 200px;
+}
+}
+
+@media screen and (max-width: 900px) {
+.photo3{
+  width: 200px;
+}
+}
+
+@media screen and (max-width: 900px) {
+.photo4{
+  width: 200px;
+}
+}
+
+
+@media screen and (max-width: 850px) {
+.photo1{
+  width: 190px;
+}
+}
+
+@media screen and (max-width: 850px) {
+.photo2{
+  width: 190px;
+}
+}
+
+@media screen and (max-width: 850px) {
+.photo3{
+  width: 190px;
+}
+}
+
+@media screen and (max-width: 850px) {
+.photo4{
+  width: 190px;
+}
+}
+
+
+@media screen and (max-width: 800px) {
+.photo1{
+  width: 180px;
+  margin-left: 12px;
+}
+}
+
+@media screen and (max-width: 800px) {
+.photo2{
+  width: 180px;
+  margin-left: 12px;
+}
+}
+
+@media screen and (max-width: 800px) {
+.photo3{
+  width: 180px;
+  margin-left: 12px;
+}
+}
+
+@media screen and (max-width: 800px) {
+.photo4{
+  width: 180px;
+  margin-left: 12px;
+}
+}
+
+@media screen and (max-width: 850px) {
+.pho2{
+  margin-left: 20px;
+}
+}
+
+@media screen and (max-width: 800px) {
+.col3{
+  margin-right: 50px;
+}
+}
+
+@media screen and (max-width: 800px) {
+.col{
+  margin-left: 90px;
+}
+}
+@media screen and (max-width: 700px) {
+.photo1{
+  width: 297px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 700px) {
+.photo2{
+  width: 297px;
+
+}
+}
+
+@media screen and (max-width: 700px) {
+.photo3{
+  width: 297px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 700px) {
+.photo4{
+  width: 297px;
+
+}
+}
+
+@media screen and (max-width: 700px) {
+.col{
+margin-left: 40px;
+}
+}
+
+@media screen and (max-width: 700px) {
+.col2{
+margin-left: 170px;
+}
+}
+
+@media screen and (max-width: 700px) {
+.col3{
+margin-right: 0px;
+}
+}
+
+@media screen and (max-width: 650px) {
+.col{
+margin-left: 5px;
+}
+}
+
+@media screen and (max-width: 650px) {
+.col2{
+margin-left: 140px;
+}
+}
+
+@media screen and (max-width: 600px) {
+.photo1{
+  width: 270px;
+
+}
+}
+
+@media screen and (max-width: 600px) {
+.photo2{
+  width: 270px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 600px) {
+.photo3{
+  width: 270px;
+
+}
+}
+
+@media screen and (max-width: 600px) {
+.photo4{
+  width: 270px;
+  margin-top: 20px;
+}
+}
+
+
+@media screen and (max-width: 550px) {
+.photo1{
+  width: 245px;
+
+}
+}
+
+@media screen and (max-width: 550px) {
+.photo2{
+  width: 245px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 550px) {
+.photo3{
+  width: 245px;
+
+}
+}
+
+@media screen and (max-width: 550px) {
+.photo4{
+  width: 245px;
+  margin-top: 20px;
+}
+}
+
+
+
+@media screen and (max-width: 600px) {
+.col2{
+  margin-left: 200px;
+}
+}
+
+
+
+@media screen and (max-width: 600px) {
+.col3{
+  margin-top: 0px;
+  margin-right: 420px;
+}
+}
+
+
+
+@media screen and (max-width: 550px) {
+  .bottle3 {
+width: 240px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .bottle2 {
+width: 240px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pho2 {
+margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bottle3 {
+width: 215px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .bottle2 {
+width: 215px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .col2 {
+margin-left: 150px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .col3 {
+margin-right: 380px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+.col2{
+  margin-left: 100px;
+}
+}
+
+@media screen and (max-width: 500px) {
+.col3{
+  margin-top: 0px;
+  margin-right: 330px;
+}
+}
+
+@media screen and (max-width: 500px) {
+.photo1{
+  width: 220px;
+
+}
+}
+
+@media screen and (max-width: 500px) {
+.photo2{
+  width: 220px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 500px) {
+.photo3{
+  width: 220px;
+
+}
+}
+
+@media screen and (max-width: 500px) {
+.photo4{
+  width: 220px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 450px) {
+  .bottle3 {
+width: 200px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .bottle2 {
+width: 200px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .col2 {
+font-size: 0.5em;
+width: 300px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .col3 {
+margin-right: 280px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .bottle3 {
+width: 180px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .bottle2 {
+width: 180px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+.photo1{
+  width: 170px;
+
+}
+}
+
+@media screen and (max-width: 400px) {
+.photo2{
+  width: 170px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 400px) {
+.photo3{
+  width: 170px;
+
+}
+}
+
+@media screen and (max-width: 400px) {
+.photo4{
+  width: 170px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 400px) {
+.col3{
+margin-right: 230px;
+}
+}
+
+@media screen and (max-width: 450px) {
+.note{
+  font-size: 0.9em;
+margin-left: 70px;
+}
+}
+
+@media screen and (max-width: 400px) {
+.note{
+  font-size: 0.8em;
+margin-left: 60px;
+}
+}
+
+@media screen and (max-width: 350px) {
+  .bottle3 {
+    margin-top: 230px; 
+    width: 300px;
+    margin-left: -160px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .bottle2 {
+width: 300px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .footer .col {
+width: 120px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .col2 {
+width: 250px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+.footer .col h1 {
+  padding-top: 0px;
+  font-size: 0.5em;
+}
+}
+
+@media screen and (max-width: 350px) {
+.col3 {
+  margin-right: 170px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.note {
+  margin-left: 60px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.dar {
+  font-size: 3em;
+}
+}
+
+@media screen and (max-width: 300px) {
+.text {
+  padding-right: 50px;
+  padding-left: 50px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.bottle2 {
+  width: 260px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.bottle3 {
+  width: 260px;
+  margin-left: -140px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.col2 {
+padding-left: 0px;
+margin-left: 50px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.col3 {
+margin-right: 120px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.photo1{
+  width: 250px;
+
+}
+}
+
+@media screen and (max-width: 300px) {
+.photo2{
+  width: 250px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 300px) {
+.photo3{
+  width: 250px;
+
+}
+}
+
+@media screen and (max-width: 300px) {
+.photo4{
+  width: 250px;
+  margin-top: 20px;
+}
+}
+
+
+
+@media screen and (max-width: 411px) {
+.bottle2 {
+  width: 180px;
+}
+}
+
+@media screen and (max-width: 411px) {
+.bottle3 {
+  width: 180px;
+}
+}
+
+@media screen and (max-width: 411px) {
+.photo1{
+  width: 365px;
+
+}
+}
+
+@media screen and (max-width: 411px) {
+.photo2{
+  width: 365px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 411px) {
+.photo3{
+  width: 365px;
+
+}
+}
+
+@media screen and (max-width: 411px) {
+.photo4{
+  width: 365px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 411px) {
+.col3{
+  margin-right: 250px;
+
+}
+}
+
+@media screen and (max-width: 360px) {
+.bottle2 {
+  width: 150px;
+}
+}
+
+@media screen and (max-width: 360px) {
+.bottle3 {
+  width: 150px;
+}
+}
+
+@media screen and (max-width: 360px) {
+.col2 {
+  padding-left: 0px;
+  width: 250px;
+}
+}
+
+@media screen and (max-width: 360px) {
+.footer .col {
+  width: 140px;
+}
+}
+
+
+
+@media screen and (max-width: 360px) {
+.photo1{
+  width: 310px;
+
+}
+}
+
+@media screen and (max-width: 360px) {
+.photo2{
+  width: 310px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 360px) {
+.photo3{
+  width: 310px;
+
+}
+}
+
+@media screen and (max-width: 360px) {
+.photo4{
+  width: 310px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 360px) {
+.text{
+padding-left: 50px;
+padding-right: 50px;
+}
+}
+
+@media screen and (max-width: 360px) {
+.note{
+margin-left: 55px;
+}
+}
+
+@media screen and (max-width: 350px) {
+.note{
+  font-size: 0.8em;
+margin-left: 50px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.bottle2 {
+  width: 280px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.bottle3 {
+  width: 280px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.photo1{
+  width: 270px;
+
+}
+}
+
+@media screen and (max-width: 320px) {
+.photo2{
+  width: 270px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.photo3{
+  width: 270px;
+
+}
+}
+
+@media screen and (max-width: 320px) {
+.photo4{
+  width: 270px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.col2 {
+  width: 220px;
+}
+}
+
+
+
+@media screen and (max-width: 375px) {
+.bottle2 {
+  width: 160px;
+}
+}
+
+@media screen and (max-width: 375px) {
+.bottle3 {
+  width: 160px;
+}
+}
+
+@media screen and (max-width: 375px) {
+.photo1{
+  width: 330px;
+
+}
+}
+
+@media screen and (max-width: 375px) {
+.photo2{
+  width: 330px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 375px) {
+.photo3{
+  width: 330px;
+
+}
+}
+
+@media screen and (max-width: 375px) {
+.photo4{
+  width: 330px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 375px) {
+.col2{
+  width: 220px;
+}
+}
+
+
+
+@media screen and (max-width: 320px) {
+.bottle2 {
+  width: 280px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.bottle3 {
+  width: 280px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.photo1{
+  width: 270px;
+
+}
+}
+
+@media screen and (max-width: 320px) {
+.photo2{
+  width: 270px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.photo3{
+  width: 270px;
+
+}
+}
+
+@media screen and (max-width: 320px) {
+.photo4{
+  width: 270px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.col3{
+  margin-right: 150px;
+}
+}
+
+@media screen and (max-width: 414px) {
+.bottle2 {
+  width: 185px;
+}
+}
+
+@media screen and (max-width: 414px) {
+.bottle3 {
+  width: 185px;
+}
+}
+
+@media screen and (max-width: 414px) {
+.photo1{
+  width: 365px;
+
+}
+}
+
+@media screen and (max-width: 414px) {
+.photo2{
+  width: 365px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 414px) {
+.photo3{
+  width: 365px;
+
+}
+}
+
+@media screen and (max-width: 414px) {
+.photo4{
+  width: 365px;
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width: 414px) {
+.col3{
+  margin-right: 240px;
+}
+}
+
+@media screen and (max-width: 360px) {
+.col3 {
+  margin-right: 200px;
+}
+}
+
+@media screen and (max-width: 320px) {
+.col3 {
+  margin-right: 150px;
+}
+}
+
+@media screen and (max-width: 375px) {
+.col3{
+  margin-right: 200px;
+}
+}
+
+@media screen and (max-width: 1600px) {
+  .red {
+   width: 700px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .burger {
+   width: 700px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .pizza {
+   width: 700px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .orange {
+   width: 700px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .orange2 {
+   width: 700px;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .chow {
+   width: 700px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .red {
+   width: 600px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .burger {
+   width: 600px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .pizza {
+   width: 600px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .orange {
+   width: 600px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .orange2 {
+   width: 600px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .chow {
+   width: 600px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .red {
+   width: 550px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .burger {
+   width: 550px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .pizza {
+   width: 550px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .orange {
+   width: 550px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .orange2 {
+   width: 550px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .chow {
+   width: 550px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .red {
+   width: 500px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .burger {
+   width: 500px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .pizza {
+   width: 500px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .orange {
+   width: 500px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .orange2 {
+   width: 500px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .chow {
+   width: 500px;
+  }
+}
+
+
+
+@media screen and (max-width: 1100px) {
+  .red {
+   width: 450px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .burger {
+   width: 450px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .pizza {
+   width: 450px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .orange {
+   width: 450px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .orange2 {
+   width: 450px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .chow {
+   width: 450px;
+  }
+}
+
+
+
+@media screen and (max-width: 1000px) {
+  .red {
+   width: 400px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .burger {
+   width: 410px;
+   margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .pizza {
+   width: 400px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .orange {
+   width: 410px;
+   margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .orange2 {
+   width: 400px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .chow {
+   width: 410px;
+   margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .col2 {
+   margin-left: 400px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .col2 {
+   margin-left: 330px;
+  }
+}
+
+
+
+@media screen and (max-width: 900px) {
+  .red {
+   width: 350px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .burger {
+   width: 350px;
+   margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .pizza {
+   width: 350px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .orange {
+   width: 350px;
+   margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .orange2 {
+   width: 350px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .chow {
+   width: 350px;
+   margin-left: -30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .col2 {
+   margin-left: 290px;
+  }
+}
+
+
+
+@media screen and (max-width: 800px) {
+  .red {
+   width: 350px;
+   margin-left: 90px;
+   margin-top: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .pizza {
+   width: 350px;
+   margin-left: 90px;
+
+  }
+}
+@media screen and (max-width: 800px) {
+  .orange2 {
+   width: 350px;
+   margin-left: 90px;
+
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .col2 {
+   margin-left: 240px;
+  }
+}
+
+
+
+@media screen and (max-width: 700px) {
+  .red {
+   width: 350px;
+   margin-left: 30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .burger {
+   width: 350px;
+   margin-left: -30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .pizza {
+   width: 350px;
+   margin-left: 30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .orange {
+   width: 350px;
+   margin-left: -30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .orange2 {
+   width: 350px;
+   margin-left: 30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .chow {
+   width: 350px;
+   margin-left: -30px;
+   height: 250px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .red {
+   width: 350px;
+   margin-left: 5px;
+   height: 250px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .pizza {
+   width: 350px;
+   margin-left: 5px;
+   height: 250px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .orange2 {
+   width: 350px;
+   margin-left: 5px;
+   height: 250px;
+  }
+}
+
+
+@media screen and (max-width: 750px) {
+  .col {
+   margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .col2 {
+   margin-left: 190px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .col2 {
+   padding-left: 0px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .red {
+   width: 300px;
+   margin-left: 30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .burger {
+   width: 300px;
+   margin-left: -30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pizza {
+   width: 300px;
+   margin-left: 30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .orange {
+   width: 300px;
+   margin-left: -30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .orange2 {
+   width: 300px;
+   margin-left: 30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .chow {
+   width: 300px;
+   margin-left: -30px;
+   height: 250px;
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .col2 {
+   margin-left: 150px;
+  }
+}
+
+
+@media screen and (max-width: 550px) {
+  .red {
+   width: 250px;
+   margin-left: 30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .burger {
+   width: 250px;
+   margin-left: -30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .pizza {
+   width: 250px;
+   margin-left: 30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .orange {
+   width: 250px;
+   margin-left: -30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .orange2 {
+   width: 250px;
+   margin-left: 30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .chow {
+   width: 250px;
+   margin-left: -30px;
+   height: 250px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer .col {
+   width: 140px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .col2 {
+   margin-left: 100px;
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+  .red {
+  width: 380px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .burger {
+    width: 380px;
+   margin-top: 300px;
+   margin-left: -195px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .pizza {
+  margin-top: 15px;
+  width: 380px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .orange {
+  margin-top: 290px;
+  width: 380px;
+  margin-left: -195px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .orange2 {
+  margin-top: 10px;
+  width: 380px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .chow {
+  margin-top: 285px;
+  width: 380px;
+  margin-left: -195px;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .red {
+  margin-left: 5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .pizza {
+margin-left: 5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .orange2 {
+margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .red {
+  width: 329px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .pizza {
+  width: 329px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .orange2 {
+  width: 329px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .chow {
+  width: 329px;
+  margin-left: -168px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .orange {
+  width: 329px;
+  margin-left: -168px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .burger {
+  width: 329px;
+  margin-left: -168px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .red {
+  width: 280px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .pizza {
+  width: 280px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .orange2 {
+  width: 280px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .burger {
+  width: 280px;
+  margin-left: -144px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .orange {
+  width: 280px;
+  margin-left: -144px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .chow {
+  width: 280px;
+  margin-left: -144px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+.footer .col {
+  margin-left: 0px;
+  padding-left: 5px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  width: 110px;
+}
+}
+
+@media screen and (max-width: 300px) {
+  .col2 {
+  margin-left: 80px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .col3 {
+  margin-right: 140px;
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width: 360px) {
+  .red {
+  width: 340px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .pizza {
+  width: 340px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .orange2 {
+  width: 340px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .burger {
+  width: 340px;
+  margin-left: -172px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .orange {
+  width: 340px;
+  margin-left: -172px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .chow {
+  width: 340px;
+  margin-left: -172px;
+  }
+}
+
+
+@media screen and (max-width: 411px) {
+  .red {
+  margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .pizza {
+  margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .orange2 {
+  margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .burger {
+  width: 380px;
+  margin-left: -190px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .orange {
+  width: 380px;
+  margin-left: -190px;
+  }
+}
+
+@media screen and (max-width: 411px) {
+  .chow {
+  width: 380px;
+  margin-left: -190px;
+  }
+}
+
+
+
+@media screen and (max-width: 320px) {
+  .red {
+  width: 290px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .pizza {
+  width: 290px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .orange2 {
+  width: 290px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .burger {
+  width: 290px;
+  margin-left: -145px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .orange {
+  width: 290px;
+  margin-left: -145px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .chow {
+  width: 290px;
+  margin-left: -145px;
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 320px) {
+  .col3 {
+  margin-right: 140px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .red {
+  width: 345px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .pizza {
+  width: 345px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .orange2 {
+  width: 345px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .burger {
+  width: 345px;
+  margin-left: -175px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .orange {
+  width: 345px;
+  margin-left: -175px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .chow {
+  width: 345px;
+  margin-left: -175px;
+  }
+}
+
+
+@media screen and (max-width: 360px) {
+.red{
+width: 330px;
+}
+
+@media screen and (max-width: 360px) {
+.burger{
+width: 330px;
+margin-left: -168px;
+}
+}
+
+@media screen and (max-width: 360px) {
+.pizza{
+width: 330px;
+}
+
+@media screen and (max-width: 360px) {
+.orange{
+width: 330px;
+margin-left: -168px;
+}
+}
+
+
+@media screen and (max-width: 360px) {
+.orange2{
+width: 330px;
+}
+
+@media screen and (max-width: 360px) {
+.chow{
+width: 330px;
+margin-left: -168px;
+}
+}
+
+
+@media screen and (max-width: 414px) {
+  .red {
+  margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .pizza {
+  margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .orange2 {
+  margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+.red{
+width: 320px;
+}
+
+@media screen and (max-width: 350px) {
+.burger{
+width: 320px;
+margin-left: -163px;
+}
+}
+
+@media screen and (max-width: 350px) {
+.pizza{
+width: 320px;
+}
+
+@media screen and (max-width: 350px) {
+.orange{
+width: 320px;
+margin-left: -163px;
+}
+}
+
+
+@media screen and (max-width: 350px) {
+.orange2{
+width: 320px;
+}
+
+@media screen and (max-width: 350px) {
+.chow{
+width: 320px;
+margin-left: -163px;
+}
+}
+
+
+@media screen and (max-width: 330px) {
+.note{
+  font-size: 0.7em;
+margin-left: 40px;
+}
+}
+
+
+@media screen and (max-width: 320px) {
+.red{
+width: 290px;
+}
+
+@media screen and (max-width: 330px) {
+.burger{
+width: 290px;
+margin-left: -148px;
+}
+}
+
+@media screen and (max-width: 330px) {
+.pizza{
+width: 290px;
+}
+
+@media screen and (max-width: 330px) {
+.orange{
+width: 290px;
+margin-left: -148px;
+}
+}
+
+
+@media screen and (max-width: 330px) {
+.orange2{
+width: 290px;
+}
+
+@media screen and (max-width: 330px) {
+.chow{
+width: 290px;
+margin-left: -148px;
+}
+}
+
+@media screen and (max-width: 310px) {
+.col{
+width: 80px;
+margin-left: 0px;
+}
+}
+
+@media screen and (max-width: 310px) {
+.col2{
+margin-left: 80px;
+}
+}
